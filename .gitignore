@@ -1,3 +1,7 @@
+/target/
+/build/
+/gradle/
+/.gradle/
 /.idea/
 /.mvn/
 /mvnw
