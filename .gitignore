@@ -7,3 +7,6 @@
 /mvnw
 /mvnw.cmd
 *.iml
+bdd-demo.ipr
+bdd-demo.iws
+classes/

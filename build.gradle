@@ -26,10 +26,11 @@ dependencies {
     compile("org.webjars:angularjs:1.5.0")
     compile("org.webjars:bootstrap:3.3.1")
 
-    testCompile("org.seleniumhq.selenium:selenium-java:2.53.0")
-    testCompile("info.cukes:cucumber-java:1.2.3")
-    testCompile("info.cukes:cucumber-spring:1.2.3")
-    testCompile("info.cukes:cucumber-junit:1.2.3")
+    testCompile("org.seleniumhq.selenium:selenium-java:3.4.0")
+    testCompile("info.cukes:cucumber-java:1.2.5")
+    testCompile("info.cukes:cucumber-spring:1.2.5")
+    testCompile("info.cukes:cucumber-junit:1.2.5")
+    testCompile("info.cukes:cucumber-html:0.2.6")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("junit:junit:4.12")
 }
