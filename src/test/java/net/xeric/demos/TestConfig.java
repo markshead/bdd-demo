@@ -1,7 +1,5 @@
 package net.xeric.demos;
 
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.ImmutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +13,8 @@ public class TestConfig {
 
     @Bean(destroyMethod = "quit")
     public WebDriver getWebDriver() {
-        return new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "./src/test/resources/bin/mac/chromedriver");
+        final WebDriver webDriver = new ChromeDriver();
+        return webDriver;
     }
 }
