@@ -18,8 +18,9 @@ public class TestConfig {
     @Lazy
     public WebDriver getWebDriver() {
         //final WebDriver webDriver = new FirefoxDriver();
-        //System.setProperty("webdriver.chrome.driver", "./src/test/resources/bin/mac/chromedriver");
-        return new ChromeDriver();
+        final WebDriver webDriver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "./src/test/resources/bin/mac/chromedriver");
+        return webDriver;
     }
 
 }
