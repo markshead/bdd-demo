@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.embedded.LocalServerPort;
-import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@Scope(value = "prototype")
+//@Scope(value = "prototype")
 public class DemoPage {
 
     private WebDriver driver;

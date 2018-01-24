@@ -2,7 +2,6 @@ package net.xeric.demos;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -16,10 +15,11 @@ public class TestConfig {
 
     @Bean(destroyMethod = "quit")
     @Lazy
+    @Scope("singleton")
     public WebDriver getWebDriver() {
         //final WebDriver webDriver = new FirefoxDriver();
-        final WebDriver webDriver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "./src/test/resources/bin/mac/chromedriver");
+        final WebDriver webDriver = new ChromeDriver();
         return webDriver;
     }
 

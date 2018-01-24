@@ -10,7 +10,6 @@ import net.xeric.demos.pages.DemoPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,13 +33,13 @@ public class DemoSteps {
     }
 
     @When("^I add the numbers (-?\\d+) and (-?\\d+)$")
-    public void i_add_the_numbers_and(int arg1, int arg2) throws Throwable {
-       demoPage.addNumbers(arg1, arg2);
+    public void i_add_the_numbers_and(int firstAddend, int secondAddend) throws Throwable {
+       demoPage.addNumbers(firstAddend, secondAddend);
     }
 
     @Then("^the result is (-?\\d+)$")
-    public void the_result_is(int arg1) throws Throwable {
-        assertEquals(arg1, demoPage.getAdderResults());
+    public void the_result_is(int sum) throws Throwable {
+        assertEquals(sum, demoPage.getAdderResults());
     }
 
     @When("^the counter is called$")
