@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.embedded.LocalServerPort;
+import org.springframework.context.annotation.Scope;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,17 +16,22 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
+@Scope(value = "prototype")
 public class DemoPage {
-    @Autowired
-    WebDriver driver;
+
+    private WebDriver driver;
+
+    private Environment env;
 
     @Autowired
-    public DemoPage(final WebDriver driver) {
+    public DemoPage(final WebDriver driver, Environment env) {
         PageFactory.initElements(driver, this);
+        this.driver = driver;
+        this.env = env;
     }
 
     public void go() {
-        driver.get("http://localhost:8080/");
+        driver.get("http://localhost:" + env.getProperty("local.server.port") + "/");
     }
 
     public void addNumbers(int x, int y) {

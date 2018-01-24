@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class CounterController {
+
     @Autowired
-    CounterService counterService;
-    int counter = 0;
+    private CounterService counterService;
+
     @RequestMapping("/counter")
     public int count() {
         return counterService.increment();
     }
+
 }

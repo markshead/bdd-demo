@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class AdderController {
+
     @Autowired
-    AdderService adderService;
+    private AdderService adderService;
 
     @RequestMapping("/adder")
-        public int adder(@RequestParam(value="firstNumber", defaultValue="0") int firstNumber, @RequestParam(value="secondNumber", defaultValue="0") int secondNumber) {
-            return adderService.add(firstNumber, secondNumber);
-        }
-
+    public int adder(@RequestParam(value = "firstNumber", defaultValue = "0") int firstNumber, @RequestParam(value = "secondNumber", defaultValue = "0") int secondNumber) {
+        return adderService.add(firstNumber, secondNumber);
+    }
 
 
 }
