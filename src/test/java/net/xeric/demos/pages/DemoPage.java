@@ -2,7 +2,10 @@ package net.xeric.demos.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -48,5 +51,12 @@ public class DemoPage {
 
     public void clickIncrement() {
         driver.findElement(By.id("increment-button")).click();
+    }
+
+    public void assertAdderResults(int expectedResult) {
+        WebElement resultEl = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("adder-result")));
+
+        assert(Integer.parseInt(resultEl.getText()) == expectedResult);
     }
 }

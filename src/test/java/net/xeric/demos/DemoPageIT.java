@@ -3,6 +3,7 @@ package net.xeric.demos;
 import net.xeric.demos.pages.DemoPage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -24,11 +25,14 @@ public class DemoPageIT {
     @Autowired
     DemoPage demoPage;
 
+    @Autowired
+    WebDriver driver;
+
     @Test
     public void simpleTest() throws Exception {
         demoPage.go();
         demoPage.addNumbers(5,5);
-        assertEquals(10, demoPage.getAdderResults());
+        demoPage.assertAdderResults(10);
     }
 
 }
