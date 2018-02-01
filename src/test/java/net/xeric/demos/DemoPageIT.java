@@ -25,14 +25,11 @@ public class DemoPageIT {
     @Autowired
     DemoPage demoPage;
 
-    @Autowired
-    WebDriver driver;
-
     @Test
     public void simpleTest() throws Exception {
         demoPage.go();
         demoPage.addNumbers(5,5);
-        demoPage.assertAdderResults(10);
+        assertEquals(demoPage.getAdderResults(), 10);
     }
 
 }

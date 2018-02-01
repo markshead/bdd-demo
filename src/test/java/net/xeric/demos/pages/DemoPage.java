@@ -42,7 +42,9 @@ public class DemoPage {
     }
 
     public int getAdderResults() {
-        return Integer.parseInt(driver.findElement(By.id("adder-result")).getText());
+        WebElement resultEl = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("adder-result")));
+        return Integer.parseInt(resultEl.getText());
     }
 
     public int getCount() {
@@ -53,10 +55,4 @@ public class DemoPage {
         driver.findElement(By.id("increment-button")).click();
     }
 
-    public void assertAdderResults(int expectedResult) {
-        WebElement resultEl = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("adder-result")));
-
-        assert(Integer.parseInt(resultEl.getText()) == expectedResult);
-    }
 }

@@ -39,7 +39,7 @@ public class DemoSteps {
 
     @Then("^the result is (-?\\d+)$")
     public void the_result_is(int sum) throws Throwable {
-        demoPage.assertAdderResults(sum);
+        assertEquals(demoPage.getAdderResults(), sum);
     }
 
     @When("^the counter is called$")
