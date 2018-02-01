@@ -13,14 +13,20 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class TestConfig {
 
+    private static final String MAC_CHROME_DRIVER = "./src/test/resources/bin/mac/chromedriver";
+    private static final String WINDOWS_CHROME_DRIVER = "./src/test/resources/bin/mac/chromedriver.exe";
+
     @Bean(destroyMethod = "quit")
     @Lazy
     @Scope("singleton")
     public WebDriver getWebDriver() {
-        //final WebDriver webDriver = new FirefoxDriver();
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/bin/mac/chromedriver");
-        final WebDriver webDriver = new ChromeDriver();
-        return webDriver;
+        String driverPath = isWindows()? WINDOWS_CHROME_DRIVER : MAC_CHROME_DRIVER;
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        return new ChromeDriver();
+    }
+
+    private boolean isWindows() {
+        return System.getProperty("os.name").toLowerCase().contains("win");
     }
 
 }
