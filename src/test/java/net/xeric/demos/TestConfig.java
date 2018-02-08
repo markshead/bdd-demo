@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class TestConfig {
 
-    private static final String MAC_CHROME_DRIVER = "./src/test/resources/bin/mac/chromedriver";
-    private static final String WINDOWS_CHROME_DRIVER = "./src/test/resources/bin/mac/chromedriver.exe";
+    private static final String MAC_CHROME_DRIVER = "./src/test/resources/bin/chromedriver";
+    private static final String WINDOWS_CHROME_DRIVER = "./src/test/resources/bin/chromedriver.exe";
 
     @Bean(destroyMethod = "quit")
     @Lazy

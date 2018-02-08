@@ -35,9 +35,16 @@ public class DemoPage {
         driver.get("http://localhost:" + env.getProperty("local.server.port") + "/");
     }
 
+    public void setValue(String fieldId, int value){
+        WebElement el = driver.findElement(By.id(fieldId));
+        el.clear();
+        el.sendKeys(Integer.toString(value));
+
+    }
+
     public void addNumbers(int x, int y) {
-        driver.findElement(By.id("adder-first-number")).sendKeys(Integer.toString(x));
-        driver.findElement(By.id("adder-second-number")).sendKeys(Integer.toString(y));
+        setValue("adder-first-number", x);
+        setValue("adder-second-number", y);
         driver.findElement(By.id("adder-button")).click();
     }
 
