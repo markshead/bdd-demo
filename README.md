@@ -44,8 +44,19 @@ Run all the unit tests:
 Start the web app, run the tests and then shut it back down:
 ```mvn verify```
 
-Start the web app using Maven on http://localhost:8080:
+Start the web app using Maven on http://localhost:8080: 
 ```mvn spring-boot:run```
 
 Start the web app from inside an IDE:
 Run the main method in DemoApplication.java
+
+* * *
+
+The main branch uses Angular 1.x. This is generally the simplest way to get 
+started if you just want to see how BDD works and aren't interested in Angular.
+There is an Angular 5 branch as well.
+
+The UI tests will use Chrome, but you can switch to a different driver in 
+TestConfig.java if you'd like to use something different like FireFox.
+
+The port the web app runs on can be set in application.properties
