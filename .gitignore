@@ -13,3 +13,6 @@ bdd-demo.iws
 build/
 classes/
 gradle/
+bin
+ng.out
+lib
