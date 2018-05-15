@@ -147,7 +147,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install --production</arguments>
+                            <arguments>install --production=false</arguments>
                         </configuration>
                     </execution>
                     <execution>
