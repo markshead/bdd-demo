@@ -38,14 +38,23 @@ page that takes a number as an input and returns it as a Roman Numeral.
 
 Some basics for getting the demo app up and running:
 
-Run all the unit tests:
+####Run all the unit tests:
 ```mvn test```
 
-Start the web app, run the tests and then shut it back down:
+####Start the web app, run the tests and then shut it back down:
 ```mvn verify```
 
-Start the web app using Maven on http://localhost:8080:
+####Start the web app using Maven on http://localhost:8080:
 ```mvn spring-boot:run```
 
-Start the web app from inside an IDE:
+####Start the web app from inside an IDE:
 Run the main method in DemoApplication.java
+
+##Angular 5
+The angular-5 branch contains an [Angular 5](https://angular.io/guide/quickstart) implementation of the demo. The angular-cli build system is embedded in maven build lifecycle phases. The integration is done as follows :-
+
+* Node & NPM installation is done when maven starts.
+* ```npm install``` is done 
+* ```npm -no-optional -g angular-cli``` is done in order to install ```angular-cli```.
+* In the ```package``` lifecycle phase, ```npm run-script build``` is called to build the angular-js project located in ```src/main/angular``` folder.
+* For live loading, ```ng build --watch``` is called in the ```prepare-package``` phase in a separate thread. This thread is terminated when maven shuts down.
