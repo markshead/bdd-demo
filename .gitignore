@@ -16,3 +16,8 @@ gradle/
 bin
 ng.out
 lib
+src/main/resources/static
+src/main/angular/lib
+src/main/angular/node
+src/main/angular/node_modules
+src/main/angular/package-json.lock
