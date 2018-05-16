@@ -22,6 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <cucumber.version>2.3.1</cucumber.version>
+        <ng.executable>ng</ng.executable>
     </properties>
 
     <dependencies>
@@ -107,6 +108,20 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <ng.executable>ng.cmd</ng.executable>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -139,17 +154,19 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
+                        <phase>generate-resources</phase>
                         <configuration>
-                            <arguments>install --production=false</arguments>
+                            <arguments>install --no-optional --production=false</arguments>
                         </configuration>
                     </execution>
                     <execution>
                         <id>angular-cli install</id>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>install --no-optional -g angular-cli</arguments>
+                          <arguments>install --no-optional -g angular-cli</arguments>
                         </configuration>
                     </execution>
                     <execution>
@@ -172,17 +189,18 @@
                 <version>1.6.0</version>
                 <executions>
                     <execution>
-                        <phase>process-resources</phase>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
                         <id>ng</id>
                         <configuration>
-                            <executable>ng</executable>
+                            <executable>${ng.executable}</executable>
                             <async>true</async>
                             <asyncDestroyOnShutdown>true</asyncDestroyOnShutdown>
                             <outputFile>ng.out</outputFile>
                             <commandlineArgs>build --watch</commandlineArgs>
+                            <environmentScript>ngenv</environmentScript>
                             <workingDirectory>src/main/angular</workingDirectory>
                         </configuration>
                     </execution>
