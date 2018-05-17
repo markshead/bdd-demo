@@ -163,7 +163,7 @@
                     </execution>
                     <execution>
                         <id>npm run-script prod</id>
-                        <phase>package</phase>
+                        <phase>pre-integration-test</phase>
                         <goals>
                             <goal>npm</goal>
                         </goals>
