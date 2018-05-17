@@ -162,16 +162,6 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>angular-cli install</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                          <arguments>install --no-optional -g angular-cli</arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
                         <id>npm run-script prod</id>
                         <phase>package</phase>
                         <goals>
@@ -203,9 +193,6 @@
                             <outputFile>ng.out</outputFile>
                             <commandlineArgs>build --watch</commandlineArgs>
                             <environmentScript>${ng.setenv}</environmentScript>
-                            <environmentVariables>
-
-                            </environmentVariables>
                             <workingDirectory>src/main/angular</workingDirectory>
                         </configuration>
                     </execution>
