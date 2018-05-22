@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <cucumber.version>2.3.1</cucumber.version>
-        <ng.executable>ng</ng.executable>
+        <npm.executable>npm</npm.executable>
         <ng.setenv>ngenv.sh</ng.setenv>
     </properties>
 
@@ -118,7 +118,7 @@
                 </os>
             </activation>
             <properties>
-                <ng.executable>ng.cmd</ng.executable>
+                <npm.executable>npm.cmd</npm.executable>
                 <ng.setenv>ngenv.bat</ng.setenv>
             </properties>
         </profile>
@@ -129,7 +129,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
                 <configuration>
                     <addResources>true</addResources>
                 </configuration>
@@ -171,7 +170,6 @@
                             <arguments>run-script build</arguments>
                         </configuration>
                     </execution>
-
                 </executions>
             </plugin>
 
@@ -187,11 +185,11 @@
                         </goals>
                         <id>ng</id>
                         <configuration>
-                            <executable>${ng.executable}</executable>
+                            <executable>${npm.executable}</executable>
                             <async>true</async>
                             <asyncDestroyOnShutdown>true</asyncDestroyOnShutdown>
                             <outputFile>ng.out</outputFile>
-                            <commandlineArgs>build --watch</commandlineArgs>
+                            <commandlineArgs>run-script watch</commandlineArgs>
                             <environmentScript>${ng.setenv}</environmentScript>
                             <workingDirectory>src/main/angular</workingDirectory>
                         </configuration>
