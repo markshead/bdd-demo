@@ -5,7 +5,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve --proxy-config proxy-config.json",
-        "watch": "ng build --watch",
+        "watch": "ng build --progress --verbose --watch > watch.out.txt 2> watch.err.txt",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
