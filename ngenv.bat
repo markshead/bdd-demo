@@ -1,1 +1,1 @@
-set PATH=node;%PATH%
+set PATH=%cd%\src\main\angular\node;%PATH%
