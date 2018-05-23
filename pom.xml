@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <cucumber.version>2.3.1</cucumber.version>
-        <npm.executable>npm</npm.executable>
+        <npm.executable>/src/main/angular/node/npm</npm.executable>
         <ng.setenv>ngenv.sh</ng.setenv>
     </properties>
 
@@ -118,7 +118,7 @@
                 </os>
             </activation>
             <properties>
-                <npm.executable>npm.cmd</npm.executable>
+                <npm.executable>\src\main\angular\node\npm.cmd</npm.executable>
                 <ng.setenv>ngenv.bat</ng.setenv>
             </properties>
         </profile>
@@ -185,7 +185,7 @@
                         </goals>
                         <id>ng</id>
                         <configuration>
-                            <executable>${npm.executable}</executable>
+				              <executable>${project.basedir}${npm.executable}</executable>
                             <async>true</async>
                             <asyncDestroyOnShutdown>true</asyncDestroyOnShutdown>
                             <outputFile>ng.out</outputFile>
