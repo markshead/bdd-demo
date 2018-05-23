@@ -2,7 +2,7 @@
 This is a very simple demo web application designed as a starting point
 interviews, training or just experimenting. This demo application uses:
 
-* AngularJS - UI framework
+* Angular - UI framework
 * Spring - Dependency injection
 * Bootstrap - CSS styling
 * Selenium - Control a web browser for UI testing
