@@ -51,7 +51,7 @@ Some basics for getting the demo app up and running:
 Run the main method in DemoApplication.java
 
 ##Angular 5
-The angular-5 branch contains an [Angular 5](https://angular.io/guide/quickstart) implementation of the demo. The angular-cli build system is embedded in maven build lifecycle phases. The integration is done as follows :-
+The angular-5 branch contains an [Angular 5](https://angular.io/guide/quickstart) implementation of the demo. The angular-cli build system is embedded in maven build lifecycle phases. Specifically this allows developers to test both the front end and backend together and providesthe ability to run the app using spring-boot:run, make changes to the angular code, and view those changes without needing to restart spring-boot:run. The integration is done as follows :-
 
 * Node & NPM installation is done when maven starts.
 * ```npm install``` is done 
