@@ -1,6 +1,7 @@
 package net.xeric.demos.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-//@Scope(value = "prototype")
 public class DemoPage {
 
     private WebDriver driver;
@@ -42,6 +42,7 @@ public class DemoPage {
     }
 
     public int getAdderResults() {
+
         WebElement resultEl = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("adder-result")));
         return Integer.parseInt(resultEl.getText());
@@ -55,4 +56,12 @@ public class DemoPage {
         driver.findElement(By.id("increment-button")).click();
     }
 
+    public void convert(int arabicNumber) {
+        driver.findElement(By.id("arabic-number")).sendKeys(Integer.toString(arabicNumber));
+        driver.findElement(By.id("convert")).click();
+    }
+
+    public String getRomanNumeral() {
+        return driver.findElement(By.id("roman-numeral")).getText();
+    }
 }

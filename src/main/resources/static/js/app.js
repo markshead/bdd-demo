@@ -34,6 +34,14 @@ myApp.controller("additionController", function($http, $scope) {
             $scope.additionResult = response.data;
         });
     }
-
-
 });
+
+/*
+ myApp.controller("converterController", function($http, $scope) {
+    $scope.convert = function() {
+       $http.get('/convert', {params:{arabicNumber: $scope.arabicNumber}}).then(function(response){
+            $scope.romanNumeral = response.data;
+        })
+    }
+});
+*/

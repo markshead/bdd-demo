@@ -1,6 +1,7 @@
 package net.xeric.demos.steps;
 
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -52,4 +53,19 @@ public class DemoSteps {
     public void the_count_increases() throws Throwable {
         assertEquals(count + 1, demoPage.getCount());
     }
+
+    /****************************************************
+     * Steps Definitions for Arabic to Roman conversion
+     * **************************************************
+
+    @When("^I convert the arabic number (\\d+)$")
+    public void i_convert_the_arabic_number(int arabicNumber) throws Exception {
+        demoPage.convert(arabicNumber);
+    }
+
+    @Then("^the roman numeral displayed is (\\w+)$")
+    public void the_roman_numeral_displayed_is(String romanNumeral) throws Exception {
+        assertEquals(romanNumeral, demoPage.getRomanNumeral());
+    }
+    */
 }
