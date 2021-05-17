@@ -56,12 +56,12 @@ public class DemoPage {
         driver.findElement(By.id("increment-button")).click();
     }
 
-    public void convert(int arabicNumber) {
-        driver.findElement(By.id("arabic-number")).sendKeys(Integer.toString(arabicNumber));
-        driver.findElement(By.id("convert")).click();
-    }
-
-    public String getRomanNumeral() {
-        return driver.findElement(By.id("roman-numeral")).getText();
-    }
+//    public void convert(int arabicNumber) {
+//        driver.findElement(By.id("arabic-number")).sendKeys(Integer.toString(arabicNumber));
+//        driver.findElement(By.id("convert")).click();
+//    }
+//
+//    public String getRomanNumeral() {
+//        return driver.findElement(By.id("roman-numeral")).getText();
+//    }
 }
